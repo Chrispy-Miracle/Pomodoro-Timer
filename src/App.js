@@ -52,8 +52,8 @@ class App extends React.Component{
           audioRef.current.play();
           if (this.state.label === "Session") {
             this.setState({
-            seconds: 1, // was 60
-            minutes: this.state.breakCount, // was this.state.breakCount -1,
+            seconds: 1, 
+            minutes: this.state.breakCount, 
             label: "Break"
           })
           } else {
@@ -89,16 +89,15 @@ class App extends React.Component{
   onReset() {
     audioRef.current.pause();
     audioRef.current.currentTime = 0;
-    clearInterval(this.myInterval)
+    clearInterval(this.myInterval);
     this.setState({
       breakCount: 5,
       sessionCount: 25,
-      counting: false,
+      counting: true,
       minutes: 25,
       seconds: 0,
       label: "Session"
     });
-    this.onStartStop();
   }
   
   render() {
